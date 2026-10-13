@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#06101f">
+<title>MANDO HVAC PRO</title>
+<style>
+:root{--bg:#06101f;--panel:#0d1b30;--panel2:#10243b;--cyan:#00eaff;--blue:#277dff;--green:#48ffad;--text:#edf8ff;--muted:#a4b8cc;--border:#1e4964;--danger:#ff657e}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#102b48 0,#06101f 55%);background-color:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.8;min-height:100vh}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:#06101ff0;border-bottom:1px solid var(--border);padding:12px 14px;backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:45px;height:45px;border:2px solid var(--cyan);border-radius:13px;display:grid;place-items:center;color:var(--cyan);font-weight:900;font-size:16px;box-shadow:0 0 15px #00eaff45}
+h1{font-size:19px;margin:0;color:var(--cyan);letter-spacing:1px}
+.subtitle{font-size:11px;color:var(--muted)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.points{font-size:12px;color:var(--green);border:1px solid #48ffad60;border-radius:20px;padding:3px 9px}
+main{max-width:950px;margin:auto;padding:14px;padding-bottom:90px}
+.hero{border:1px solid #087d99;border-radius:20px;padding:20px;background:linear-gradient(130deg,#102f4b,#071424 75%);box-shadow:0 0 22px #00d9ff13}
+.hero h2{color:var(--cyan);margin:0 0 8px;font-size:23px}
+.hero p{margin:5px 0;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:13px;text-align:center;padding:10px 4px}
+.stat strong{display:block;color:var(--cyan);font-size:20px}
+.stat span{font-size:11px;color:var(--muted)}
+.search{width:100%;padding:13px 15px;background:#081629;color:var(--text);border:1px solid var(--border);border-radius:13px;outline:none;margin:12px 0}
+.search:focus,input:focus,textarea:focus,select:focus{border-color:var(--cyan)}
+.section-title{font-size:18px;color:var(--cyan);margin:22px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{background:linear-gradient(145deg,var(--panel),#091526);border:1px solid var(--border);border-radius:15px;padding:13px;min-width:0}
+.card h3{font-size:15px;margin:0 0 5px;color:var(--cyan)}
+.card p{font-size:13px;color:var(--muted);margin:4px 0 10px}
+.btn{border:1px solid #167a98;background:#0b2b40;color:var(--cyan);padding:9px 12px;border-radius:10px;font-size:13px}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:linear-gradient(110deg,#087bba,#0753a0);color:white;border-color:#24baff}
+.btn.green{color:var(--green);border-color:#287d60;background:#0c2b27}
+.btn.red{color:#ff9aaa;border-color:#82384a;background:#301524}
+.btnrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.nav{position:fixed;z-index:8;bottom:0;left:0;right:0;background:#06101ff7;border-top:1px solid var(--border);display:flex;justify-content:space-around;padding:8px 2px calc(8px + env(safe-area-inset-bottom))}
+.nav button{border:0;background:transparent;color:var(--muted);font-size:10px;padding:4px 2px;flex:1}
+.nav button span{display:block;font-size:19px}
+.nav button.active{color:var(--cyan)}
+.hidden{display:none!important}
+.tag{display:inline-block;border:1px solid #245878;border-radius:20px;padding:2px 8px;color:var(--cyan);font-size:11px;margin:2px}
+.content h2{font-size:22px;color:var(--cyan)}
+.content h3{font-size:17px;color:var(--green);margin-top:18px}
+.content p,.content li{font-size:14px}
+.content ul,.content ol{padding-right:23px}
+.note,.warning,.success{border-radius:11px;padding:11px 13px;margin:12px 0;font-size:13px}
+.note{background:#10273b;border-right:4px solid var(--cyan)}
+.warning{background:#301f1a;border-right:4px solid #ffae57;color:#ffe0ba}
+.success{background:#102d28;border-right:4px solid var(--green)}
+table{border-collapse:collapse;width:100%;font-size:12px;margin:12px 0}
+th,td{border:1px solid var(--border);padding:8px;text-align:right;vertical-align:top}
+th{background:#12324b;color:var(--cyan)}
+.diagram{white-space:pre-wrap;direction:rtl;background:#06101d;border:1px solid #1b5870;border-radius:12px;padding:12px;color:#7df7ff;font-family:Tahoma,Arial,sans-serif;font-size:13px;overflow-wrap:anywhere}
+.field{display:block;margin:10px 0;font-size:13px;color:var(--muted)}
+.field input,.field select,.field textarea{display:block;width:100%;margin-top:4px;padding:11px;border-radius:9px;background:#071426;border:1px solid var(--border);color:var(--text)}
+.field textarea{min-height:110px;resize:vertical}
+.result{padding:12px;border:1px solid #197d9b;border-radius:10px;margin-top:12px;color:var(--green);overflow-wrap:anywhere}
+.quiz-option{display:block;width:100%;text-align:right;margin:8px 0;padding:12px;border-radius:10px;background:#0b1c30;border:1px solid var(--border);color:var(--text)}
+.quiz-option.correct{border-color:var(--green);background:#12382e}
+.quiz-option.wrong{border-color:var(--danger);background:#381927}
+.small{font-size:12px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--border);margin:16px 0}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:25px 5px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:27px}.hero h2{font-size:29px}}
+</style>
+</head>
+<body>
+<header>
+<div class="topline">
+<div class="brand">
+<div class="logo">M</div>
+<div><h1>MANDO HVAC PRO</h1><div class="subtitle">مرجع التبريد والتكييف • تعلّم وطبّق</div></div>
+</div>
+<div class="points">⚡ <span id="points">0</span> نقطة</div>
+</div>
+</header>
+<main>
+<section id="home" class="page">
+<div class="hero">
+<span class="tag">HVAC LEARNING SYSTEM</span>
+<h2>أهلاً بيك في MANDO HVAC PRO 🔧</h2>
+<p>اتعلّم التبريد والتكييف من الأساسيات لحد تشخيص الأعطال، وافهم مكونات الدائرة والحسابات والكهرباء خطوة بخطوة.</p>
+<div class="btnrow">
+<button class="btn primary" onclick="showPage('lessons')">ابدأ التعلّم ←</button>
+<button class="btn" onclick="showPage('quiz')">اختبر معلوماتك 🧠</button>
+</div>
+</div>
+<div class="stats">
+<div class="stat"><strong id="doneCount">0</strong><span>دروس مكتملة</span></div>
+<div class="stat"><strong id="favCount">0</strong><span>المفضلة</span></div>
+<div class="stat"><strong id="quizCount">0</strong><span>إجابات صحيحة</span></div>
+</div>
+<label class="small" for="globalSearch">ابحث في الدروس والموضوعات</label>
+<input id="globalSearch" class="search" placeholder="مثال: المكثف، الضاغط، الشحنة، الكابستور..." oninput="renderSearch(this.value)">
+<div id="searchResults"></div>
+<h2 class="section-title">📚 أقسام المرجع</h2>
+<div class="grid" id="homeCategories"></div>
+<div class="note">نصيحة ماندو: افهم طريقة عمل الدائرة قبل تغيير أي قطعة. القياس الصحيح والتشخيص أهم من تغيير قطع بالتجربة.</div>
+</section>
+
+<section id="lessons" class="page hidden">
+<h2 class="section-title">📘 مكتبة الدروس</h2>
+<p class="small">اختار درس لعرض الشرح والأمثلة والملاحظات.</p>
+<div class="grid" id="lessonGrid"></div>
+</section>
+
+<section id="detail" class="page hidden">
+<div class="btnrow"><button class="btn" onclick="showPage('lessons')">← رجوع للدروس</button><button class="btn" onclick="showPage('favorites')">⭐ المفضلة</button></div>
+<article id="lessonDetail" class="content"></article>
+<div class="btnrow">
+<button class="btn primary" onclick="markDone()">✓ علّم الدرس كمكتمل</button>
+<button class="btn" onclick="toggleFavorite()">☆ إضافة للمفضلة</button>
+<button class="btn" onclick="nextLesson()">الدرس التالي ←</button>
+</div>
+<div id="lessonStatus" class="small"></div>
+</section>
+
+<section id="calculators" class="page hidden">
+<h2 class="section-title">🧮 الحاسبات الهندسية</h2>
+<div class="card">
+<h3>1. تحويل وحدات الحرارة</h3>
+<label class="field">القيمة<input id="tempValue" type="number" value="25"></label>
+<label class="field">من<select id="tempFrom"><option value="C">مئوية °C</option><option value="F">فهرنهايت °F</option><option value="K">كلفن K</option></select></label>
+<label class="field">إلى<select id="tempTo"><option value="F">فهرنهايت °F</option><option value="C">مئوية °C</option><option value="K">كلفن K</option></select></label>
+<button class="btn primary" onclick="convertTemp()">احسب التحويل</button>
+<div id="tempResult" class="result hidden"></div>
+</div>
+<div class="card" style="margin-top:12px">
+<h3>2. تحويل الضغط</h3>
+<p>تحويل تقريبي بين وحدات الضغط الشائعة.</p>
+<label class="field">القيمة<input id="pressureValue" type="number" value="1" min="0"></label>
+<label class="field">من<select id="pressureFrom"><option value="bar">bar</option><option value="psi">psi</option><option value="kpa">kPa</option></select></label>
+<label class="field">إلى<select id="pressureTo"><option value="psi">psi</option><option value="bar">bar</option><option value="kpa">kPa</option></select></label>
+<button class="btn primary" onclick="convertPressure()">احسب التحويل</button>
+<div id="pressureResult" class="result hidden"></div>
+</div>
+<div class="card" style="margin-top:12px">
+<h3>3. القدرة الكهربائية</h3>
+<p>في دائرة أحادية الطور ومعامل قدرة معلوم: القدرة الفعلية = الجهد × التيار × معامل القدرة.</p>
+<label class="field">الجهد بالفولت<input id="volt" type="number" value="220" min="0"></label>
+<label class="field">التيار بالأمبير<input id="amp" type="number" value="5" min="0"></label>
+<label class="field">معامل القدرة من 0 إلى 1<input id="pf" type="number" value="0.85" min="0" max="1" step="0.01"></label>
+<button class="btn primary" onclick="calcPower()">احسب القدرة</button>
+<div id="powerResult" class="result hidden"></div>
+</div>
+<div class="card" style="margin-top:12px">
+<h3>4. معدل تدفق الهواء التقريبي</h3>
+<p>في النظام الإمبراطوري: CFM = الحمل المحسوس بالـ BTU/h ÷ (1.08 × فرق الحرارة بالفهرنهايت).</p>
+<label class="field">الحمل المحسوس BTU/h<input id="loadBtu" type="number" value="12000" min="0"></label>
+<label class="field">فرق حرارة الهواء °F<input id="deltaF" type="number" value="20" min="0.1"></label>
+<button class="btn primary" onclick="calcAir()">احسب التدفق</button>
+<div id="airResult" class="result hidden"></div>
+</div>
+<div class="warning">الحاسبات تعليمية وليست بديلًا عن بيانات المصنع أو التصميم المعتمد. لا تستخدمها وحدها لاختيار شحنة الفريون أو ضغط التشغيل أو مقاس المواسير.</div>
+</section>
+
+<section id="quiz" class="page hidden">
+<h2 class="section-title">🧠 اختبر نفسك</h2>
+<div class="card">
+<div class="small" id="quizProgress">السؤال 1</div>
+<h3 id="questionText">جاهز للاختبار؟</h3>
+<div id="answers"></div>
+<div id="quizFeedback" class="note hidden"></div>
+<div class="btnrow">
+<button class="btn primary" id="nextQuestion" onclick="nextQuestion()" disabled>السؤال التالي ←</button>
+<button class="btn" onclick="startQuiz()">إعادة الاختبار ↻</button>
+</div>
+<div id="quizSummary" class="result hidden"></div>
+</div>
+</section>
+
+<section id="favorites" class="page hidden">
+<h2 class="section-title">⭐ دروسي المفضلة</h2>
+<div id="favoriteList"></div>
+</section>
+
+<section id="progress" class="page hidden">
+<h2 class="section-title">🏆 تقدمي في التعلّم</h2>
+<div class="stats">
+<div class="stat"><strong id="progressDone">0</strong><span>دروس مكتملة</span></div>
+<div class="stat"><strong id="progressPoints">0</strong><span>نقطة مكتسبة</span></div>
+<div class="stat"><strong id="progressCorrect">0</strong><span>إجابات صحيحة</span></div>
+</div>
+<div class="card"><h3>الشارات</h3><div id="badges"></div></div>
+<div class="card" style="margin-top:12px"><h3>حفظ واستعادة بياناتك</h3><p>صدّر تقدمك ومفضلاتك ومحتوى الإدارة إلى ملف نصي JSON، واحتفظ به على جهازك.</p><div class="btnrow"><button class="btn primary" onclick="exportData()">⬇ تصدير نسخة احتياطية</button><button class="btn" onclick="document.getElementById('importFile').click()">⬆ استعادة نسخة</button><input class="hidden" id="importFile" type="file" accept=".json,application/json" onchange="importData(event)"></div></div>
+</section>
+
+<section id="admin" class="page hidden">
+<h2 class="section-title">⚙️ إدارة المحتوى</h2>
+<div class="warning">لوحة إدارة محلية على هذا الجهاز فقط. كلمة المرور داخل صفحة HTML ليست وسيلة حماية حقيقية؛ لا تضع بيانات سرية أو معلومات عملاء هنا.</div>
+<div id="adminLogin">
+<label class="field">كلمة مرور الإدارة المحلية<input id="adminPassword" type="password" placeholder="أنشئ كلمة مرور محلية"></label>
+<button class="btn primary" onclick="adminLogin()">دخول لوحة الإدارة</button>
+<p class="small">في أول استخدام، اختر كلمة مرور جديدة. يتم حفظها على الجهاز فقط.</p>
+</div>
+<div id="adminPanel" class="hidden">
+<h3>إضافة أو تعديل درس</h3>
+<label class="field">عنوان الدرس<input id="editTitle" placeholder="عنوان الدرس"></label>
+<label class="field">القسم<input id="editCategory" placeholder="مثال: أساسيات"></label>
+<label class="field">ملخص الدرس<input id="editSummary" placeholder="ملخص قصير"></label>
+<label class="field">محتوى الدرس<textarea id="editBody" placeholder="اكتب شرح الدرس باستخدام HTML بسيط أو نص عادي"></textarea></label>
+<div class="btnrow"><button class="btn primary" onclick="saveCustomLesson()">حفظ الدرس</button><button class="btn" onclick="clearEditor()">مسح الحقول</button></div>
+<hr>
+<h3>إدارة الدروس المضافة</h3>
+<div id="customLessonList"></div>
+<hr>
+<h3>إعدادات المظهر</h3>
+<label class="field">لون الإضاءة<select id="themeColor" onchange="setTheme(this.value)"><option value="#00eaff">نيون سماوي</option><option value="#48ffad">نيون أخضر</option><option value="#bb8aff">نيون بنفسجي</option><option value="#ffb65c">نيون برتقالي</option></select></label>
+<button class="btn red" onclick="adminLogout()">تسجيل الخروج من الإدارة</button>
+</div>
+</section>
+
+<section id="glossary" class="page hidden">
+<h2 class="section-title">📖 قاموس المصطلحات</h2>
+<input class="search" id="glossarySearch" placeholder="ابحث بالعربي أو الإنجليزي..." oninput="renderGlossary(this.value)">
+<div id="glossaryList"></div>
+</section>
+<footer>MANDO HVAC PRO • تعلّم بأمان • افهم العطل قبل إصلاحه</footer>
+</main>
+
+<nav class="nav">
+<button class="active" data-page="home" onclick="showPage('home',this)"><span>⌂</span>الرئيسية</button>
+<button data-page="lessons" onclick="showPage('lessons',this)"><span>📚</span>الدروس</button>
+<button data-page="calculators" onclick="showPage('calculators',this)"><span>🧮</span>الحاسبات</button>
+<button data-page="quiz" onclick="showPage('quiz',this)"><span>🧠</span>اختبار</button>
+<button data-page="progress" onclick="showPage('progress',this)"><span>🏆</span>تقدمي</button>
+<button data-page="admin" onclick="showPage('admin',this)"><span>⚙</span>الإدارة</button>
+</nav>
+
+<script>
+"use strict";
+const KEY="mando_hvac_pro_v1";
+const initialState={points:0,done:[],favorites:[],correct:0,answered:0,custom:[],recent:[],theme:"#00eaff",adminHash:""};
+let state;
+try{state=Object.assign({},initialState,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){state={...initialState}}
+const lessons=[
+{id:"basics",category:"الأساسيات",title:"1. أساسيات التبريد والتكييف",summary:"الحرارة والطاقة ودرجة الحرارة والضغط.",body:`<h3>يعني إيه تبريد؟</h3><p>التبريد هو نقل الحرارة من حيز أو جسم إلى مكان آخر. جهاز التكييف لا يصنع البرودة؛ بل ينقل الحرارة من داخل المكان إلى خارجه.</p><h3>الحرارة ودرجة الحرارة</h3><p>الحرارة طاقة تنتقل بسبب فرق درجة الحرارة. درجة الحرارة مقياس للحالة الحرارية، وليست هي كمية الحرارة نفسها.</p><h3>طرق انتقال الحرارة</h3><ul><li><b>التوصيل:</b> انتقال الحرارة خلال مادة، مثل جسم معدني.</li><li><b>الحمل:</b> انتقال الحرارة مع حركة الهواء أو السائل.</li><li><b>الإشعاع:</b> انتقال الطاقة بالموجات الكهرومغناطيسية.</li></ul><h3>الضغط</h3><p>ضغط دائرة التبريد يتأثر بنوع وسيط التبريد ودرجة التشبع والحمل وتدفق الهواء وحالة المكونات. قراءة الضغط وحدها لا تكفي لتحديد العطل.</p><div class="note">قاعدة مهمة: اربط بين الضغط ودرجة الحرارة وظروف التشغيل ومواصفات المصنع.</div>`},
+{id:"cycle",category:"الدائرة",title:"2. دورة التبريد الأساسية",summary:"مسار وسيط التبريد خلال مكونات الدائرة الأربعة.",body:`<h3>المكونات الأربعة الأساسية</h3><ol><li>الضاغط: يرفع ضغط ودرجة حرارة بخار وسيط التبريد.</li><li>المكثف: يطرد الحرارة إلى الهواء أو الماء المحيط.</li><li>أداة التمدد: تخفض الضغط وتتحكم في تدفق وسيط التبريد.</li><li>المبخر: يمتص الحرارة من الحيز المراد تبريده.</li></ol><div class="diagram">بخار منخفض الضغط<br>↓<br>[ الضاغط ] ← طاقة كهربائية<br>↓ بخار عالي الضغط والحرارة<br>[ المكثف ] → طرد حرارة للخارج<br>↓ سائل عالي الضغط<br>[ أداة التمدد ] → هبوط الضغط<br>↓ خليط منخفض الضغط<br>[ المبخر ] → امتصاص حرارة الداخل<br>↓ بخار منخفض الضغط يعود للضاغط</div><h3>فكرة الدورة</h3><p>يتغير ضغط وسيط التبريد ودرجة حرارته وحالته أثناء انتقاله بين المكونات. التصميم الجيد يضمن انتقال الحرارة والتدفق المناسبين.</p><div class="warning">لا تفتح الدائرة ولا تطلق وسيط التبريد في الجو. الاسترجاع والتعامل مع وسيط التبريد يحتاجان معدات مناسبة وفنيًا مؤهلًا.</div>`},
+{id:"compressor",category:"المكونات",title:"3. الضاغط Compressor",summary:"وظيفته وأنواعه وعلامات الأعطال.",body:`<h3>الوظيفة</h3><p>يسحب الضاغط بخار وسيط التبريد من جانب الضغط المنخفض ويدفعه إلى جانب الضغط المرتفع، مع استهلاك طاقة كهربائية.</p><h3>الأنواع الشائعة</h3><ul><li><b>ترددي:</b> يستخدم مكبسًا داخل أسطوانة.</li><li><b>دوار Rotary:</b> شائع في وحدات صغيرة ومتوسطة.</li><li><b>Scroll:</b> يعتمد على حلزونين متداخلين.</li><li><b>لولبي Screw:</b> يستخدم في تطبيقات أكبر.</li><li><b>طرد مركزي:</b> يوجد في تطبيقات التبريد الكبيرة.</li></ul><h3>أعراض تستحق الفحص</h3><ul><li>لا يبدأ التشغيل.</li><li>تيار أعلى من المتوقع.</li><li>صوت أو اهتزاز غير معتاد.</li><li>حماية حرارية تفصل باستمرار.</li><li>ضعف أداء التبريد.</li></ul><p>هذه الأعراض ليست تشخيصًا نهائيًا؛ قد تكون المشكلة من التغذية الكهربائية أو المكثف الكهربائي أو تدفق الهواء أو الضغط أو التحكم.</p><div class="warning">افصل التغذية وتأكد من انعدام الجهد بطريقة آمنة قبل أي فحص كهربائي. لا تختبر الضاغط بتوصيلات عشوائية.</div>`},
+{id:"condenser",category:"المكونات",title:"4. المكثف Condenser",summary:"طرد الحرارة والتكثيف وأسباب ضعف الأداء.",body:`<h3>وظيفة المكثف</h3><p>ينقل المكثف الحرارة من وسيط التبريد إلى الوسط المحيط. في كثير من الأنظمة يبرد البخار عالي الضغط ثم يتكثف إلى سائل.</p><h3>أنواعه</h3><ul><li>مكثف هوائي بمروحة.</li><li>مكثف مائي.</li><li>مكثف تبخيري.</li></ul><h3>أسباب ضعف التكثيف</h3><ul><li>اتساخ الزعانف أو انسداد مسار الهواء.</li><li>تعطل المروحة أو ضعف سرعتها.</li><li>ارتفاع حرارة الهواء المحيط.</li><li>وجود غازات غير قابلة للتكثف أو شحنة غير صحيحة؛ تحتاج الحالة إلى تشخيص مهني.</li></ul><h3>الفحص المبدئي</h3><p>افحص نظافة المكثف وتدفق الهواء وحالة المروحة والتوصيلات الظاهرة. قارن القياسات بمواصفات الجهاز وظروف التشغيل.</p><div class="note">نظافة المكثف تساعد على طرد الحرارة، لكنها لا تعني وحدها أن الشحنة أو بقية أجزاء الدائرة سليمة.</div>`},
+{id:"evaporator",category:"المكونات",title:"5. المبخر Evaporator",summary:"امتصاص الحرارة وتدفق الهواء وتكوّن الثلج.",body:`<h3>الوظيفة</h3><p>يمتص المبخر الحرارة من الهواء أو السائل المراد تبريده، ويتبخر وسيط التبريد داخله وفق تصميم النظام.</p><h3>أسباب تجمد المبخر المحتملة</h3><ul><li>فلتر هواء متسخ أو تدفق هواء ضعيف.</li><li>مروحة لا تعمل بالشكل الصحيح.</li><li>مشكلة في أداة التمدد أو دائرة وسيط التبريد.</li><li>حمل حراري منخفض أو ظروف تشغيل غير مناسبة.</li></ul><h3>خطوات التفكير</h3><p>ابدأ بتدفق الهواء وحالة الفلاتر والمروحة، ثم افحص درجات الحرارة والقياسات الكهربائية وبيانات النظام قبل استنتاج وجود نقص في وسيط التبريد.</p><div class="warning">لا تكسر الثلج بأداة حادة؛ فقد تتلف الأنابيب وتسبب تسربًا.</div>`},
+{id:"expansion",category:"المكونات",title:"6. صمام التمدد والكابلاري",summary:"التحكم في التدفق وخفض الضغط.",body:`<h3>أداة التمدد</h3><p>تسمح بهبوط الضغط بين المكثف والمبخر وتتحكم في كمية وسيط التبريد الداخلة إلى المبخر.</p><h3>الأنواع</h3><ul><li>الأنبوب الشعري Capillary Tube.</li><li>صمام تمدد حراري TXV.</li><li>صمام تمدد إلكتروني EEV.</li></ul><p>الأنبوب الشعري ثابت الخصائص نسبيًا، بينما تستطيع صمامات التمدد التحكم في التدفق وفق آلية تصميمها وإشارات التحكم.</p><h3>علامات مشكلة التدفق</h3><p>قد تظهر على هيئة ضعف تبريد أو تجمد موضعي أو قراءات غير طبيعية. لا يمكن الجزم بالانسداد أو نقص الشحنة من عرض واحد فقط.</p><div class="note">أي تنظيف داخلي أو تغيير في دائرة التبريد يجب أن يتم وفق إجراء المصنع وبمعدات مناسبة.</div>`},
+{id:"filter",category:"المكونات",title:"7. الفلتر المجفف والمراكم",summary:"حماية الدائرة من الرطوبة والشوائب والسائل الراجع.",body:`<h3>الفلتر المجفف Filter Drier</h3><p>يقلل الرطوبة وبعض الملوثات داخل دائرة التبريد. الرطوبة قد تتفاعل مع الزيت أو تسبب مشاكل في أداة التمدد بحسب النظام.</p><h3>المراكم Accumulator</h3><p>يستخدم في بعض الدوائر على خط السحب للمساعدة في تقليل وصول السائل إلى الضاغط.</p><h3>علامات تستدعي الفحص</h3><ul><li>فرق حرارة غير معتاد عبر الفلتر قد يشير إلى مشكلة تدفق، لكنه ليس دليلًا وحيدًا.</li><li>وجود رطوبة أو تلوث بعد فتح الدائرة.</li><li>علامات رجوع سائل أو تشغيل غير مستقر.</li></ul><p>نوع الفلتر ومكانه وطريقة تغييره تعتمد على وسيط التبريد وتصميم الدائرة وتعليمات المصنع.</p>`},
+{id:"refrigerant",category:"وسائط التبريد",title:"8. وسائط التبريد Refrigerants",summary:"اختيار الوسيط والسلامة والملصق الفني.",body:`<h3>ما هو وسيط التبريد؟</h3><p>مادة تنقل الحرارة خلال تغيرات الضغط والحالة داخل دائرة التبريد. لكل وسيط خصائص ضغط وحرارة وتوافق مع الزيوت والمكونات.</p><h3>قبل العمل على أي جهاز</h3><ul><li>اقرأ ملصق الجهاز وحدد نوع الوسيط بدقة.</li><li>استخدم معدات وعدادات وخراطيم متوافقة مع الوسيط.</li><li>لا تخلط أنواع وسائط التبريد.</li><li>لا تختَر شحنة أو ضغطًا من جدول عام دون الرجوع لمواصفات الجهاز.</li></ul><h3>ملاحظات سلامة</h3><p>تختلف مخاطر السمية والاشتعال والضغط بين الوسائط. بعض الأنواع تحتاج تهوية وإجراءات خاصة ومعدات معتمدة.</p><div class="warning">ممنوع إطلاق وسيط التبريد عمدًا في الجو. استخدم معدات الاسترجاع المناسبة، واتبع القوانين المحلية وإرشادات المصنع.</div>`},
+{id:"superheat",category:"القياسات",title:"9. السوبرهيت والسبكولينج",summary:"فهم القراءات مع جدول وسيط التبريد.",body:`<h3>السوبرهيت Superheat</h3><p>هو الفرق بين درجة حرارة بخار وسيط التبريد المقاسة فعليًا ودرجة حرارة التشبع المقابلة لضغط التبخر.</p><p><b>السوبرهيت = درجة حرارة خط السحب − درجة حرارة التشبع عند ضغط السحب.</b></p><h3>السبكولينج Subcooling</h3><p>هو الفرق بين درجة حرارة التشبع المقابلة لضغط التكثيف ودرجة حرارة السائل المقاسة فعليًا.</p><p><b>السبكولينج = درجة حرارة التشبع عند ضغط التكثيف − درجة حرارة خط السائل.</b></p><h3>طريقة الفهم</h3><ol><li>حدد وسيط التبريد من لوحة الجهاز.</li><li>خذ قراءة الضغط من نقطة مناسبة.</li><li>حوّل الضغط إلى درجة تشبع باستخدام جدول الوسيط الصحيح مع مراعاة مرجع الضغط.</li><li>قِس درجة حرارة الأنبوب بمسبار مناسب.</li><li>احسب الفرق وقارنه ببيانات المصنع وظروف التشغيل.</li></ol><div class="warning">قيم السوبرهيت والسبكولينج المستهدفة ليست واحدة لكل الأجهزة. لا تستخدم قيمة عامة لشحن جميع المكيفات.</div>`},
+{id:"electrical",category:"الكهرباء",title:"10. أساسيات كهرباء التكييف",summary:"الجهد والتيار والمقاومة والقدرة.",body:`<h3>القوانين الأساسية</h3><ul><li>قانون أوم: V = I × R.</li><li>القدرة الكهربائية البسيطة: P = V × I في حالة تيار مستمر أو حمل مقاومي مناسب.</li><li>في التيار المتردد، القدرة الفعلية تتأثر بمعامل القدرة؛ وللأنظمة ثلاثية الطور توجد علاقات إضافية.</li></ul><h3>أجزاء التحكم الشائعة</h3><ul><li>قاطع الحماية.</li><li>كونتاكتور.</li><li>أوفرلود أو حماية حرارية.</li><li>ثرموستات وحساسات.</li><li>لوحة إلكترونية أو إنفرتر.</li></ul><h3>طريقة تشخيص منطقية</h3><p>ابدأ بمراجعة مخطط الجهاز، وافحص التغذية والحمايات والإشارات وفق دليل المصنع. افصل الطاقة قبل لمس الموصلات أو تغيير المكونات.</p><div class="warning">الجهد الكهربائي قد يسبب صدمة قاتلة. لا تعمل على دائرة حية إذا لم تكن مؤهلًا ومجهزًا لذلك. المكثفات قد تحتفظ بشحنة حتى بعد فصل الكهرباء.</div>`},
+{id:"capacitor",category:"الكهرباء",title:"11. الكابستور Capacitor",summary:"دوره وأعراض تعطله وقراءة سعته.",body:`<h3>الوظيفة</h3><p>يُستخدم المكثف الكهربائي في بعض محركات المراوح والضواغط للمساعدة في بدء الحركة أو تحسين تشغيل المحرك وفق تصميمه.</p><h3>قراءة الملصق</h3><p>تُكتب السعة عادة بالميكروفاراد µF، وقد يُكتب جهد التشغيل VAC. يجب اختيار بديل يطابق السعة والمواصفات المسموح بها من المصنع.</p><h3>أعراض محتملة</h3><ul><li>المحرك يطن ولا يدور.</li><li>صعوبة بدء التشغيل.</li><li>ضعف أداء المروحة.</li></ul><p>هذه الأعراض قد تنتج أيضًا عن محرك تالف أو مشكلة تغذية أو حمل ميكانيكي أو دائرة تحكم.</p><div class="warning">افصل التغذية وتحقق من تفريغ المكثف بطريقة آمنة باستخدام الإجراء والأداة المناسبين. لا تقصر أطرافه بمفك.</div>`},
+{id:"tools",category:"الأدوات",title:"12. أدوات فني التبريد والتكييف",summary:"الملتيميتر والمانيفولد ومضخة التفريغ والميزان.",body:`<h3>أدوات القياس</h3><ul><li><b>Multimeter:</b> قياس الجهد والتيار والمقاومة ضمن حدود الجهاز.</li><li><b>Clamp Meter:</b> قياس التيار باستخدام فك الكلابس عندما يكون ذلك مناسبًا.</li><li><b>Manifold أو عدادات رقمية:</b> قياس ضغط الدائرة بأدوات متوافقة.</li><li><b>مقياس حرارة:</b> قياس درجات حرارة الأنابيب والهواء.</li><li><b>ميزان شحنة:</b> وزن وسيط التبريد عند الشحن وفق تعليمات المصنع.</li><li><b>مضخة تفريغ ومقياس ميكرون:</b> إزالة الهواء والرطوبة والتحقق من التفريغ وفق مواصفات الخدمة.</li><li><b>كاشف تسرب:</b> الكشف عن التسرب باستخدام تقنية مناسبة للوسيط.</li></ul><h3>اختيار الأداة</h3><p>تحقق من مدى القياس وتصنيف السلامة وحالة الخراطيم والوصلات ومعايرة الأداة. لا تستخدم أداة غير متوافقة مع ضغط أو وسيط النظام.</p>`},
+{id:"split",category:"أنظمة التكييف",title:"13. المكيف السبليت",summary:"الوحدتان الداخلية والخارجية وفحص الأداء.",body:`<h3>الوحدة الداخلية</h3><p>تضم عادة المبخر ومروحة داخلية وفلترًا وحساسات وتصريف مياه التكثف.</p><h3>الوحدة الخارجية</h3><p>تضم غالبًا الضاغط والمكثف ومروحة خارجية وأجزاء التحكم.</p><h3>فحص ضعف التبريد</h3><ol><li>تأكد من اختيار وضع التشغيل الصحيح وضبط درجة الحرارة.</li><li>افحص الفلاتر ومسار الهواء.</li><li>لاحظ عمل المراوح ونظافة المبادلات الحرارية.</li><li>تحقق من عدم وجود انسداد في تصريف المياه.</li><li>قِس درجات الحرارة والتيار والضغط إذا كنت مؤهلًا، وقارن النتائج بدليل الجهاز.</li></ol><p>تختلف الإجراءات بين المكيف العادي والإنفرتر وبين الموديلات المختلفة.</p>`},
+{id:"inverter",category:"أنظمة التكييف",title:"14. الإنفرتر Inverter",summary:"التحكم في سرعة الضاغط وأخطاء التشخيص.",body:`<h3>فكرة الإنفرتر</h3><p>تستخدم دائرة إلكترونية للتحكم في سرعة محرك الضاغط، وغالبًا تضبط القدرة بحسب الحمل وظروف التشغيل.</p><h3>أعراض محتملة</h3><ul><li>رمز خطأ على الشاشة.</li><li>توقف الوحدة بعد فترة.</li><li>تذبذب في التشغيل.</li><li>مشكلة في الاتصال بين الوحدتين.</li></ul><h3>التشخيص</h3><p>سجل رمز الخطأ ورقم الموديل وظروف ظهوره، ثم راجع دليل الصيانة الخاص بالموديل. قد يكون الرمز مرتبطًا بحساس أو جهد أو اتصال أو حماية أو جزء إلكتروني.</p><div class="warning">لوحات الإنفرتر قد تحتوي على جهود خطرة وشحنة كهربائية مخزنة. لا تلمس اللوحة ولا تقِس دوائرها دون تدريب وإجراءات المصنع.</div>`},
+{id:"fridge",category:"التبريد المنزلي",title:"15. الثلاجات والديب فريزر",summary:"دورة التشغيل والثرموستات والتبريد.",body:`<h3>الأجزاء الرئيسية</h3><p>الضاغط والمكثف وأداة التمدد أو الأنبوب الشعري والمبخر، إضافة إلى الثرموستات أو الحساسات ونظام إذابة الثلج في بعض الأجهزة.</p><h3>الثلاجة لا تبرد</h3><ul><li>تحقق من التغذية الكهربائية وإعدادات التحكم.</li><li>افحص إحكام الباب وعدم انسداد فتحات الهواء.</li><li>افحص نظافة المكثف وتدفق الهواء إن كان الوصول آمنًا.</li><li>لاحظ هل يعمل الضاغط والمروحة وهل يتكون ثلج غير طبيعي.</li><li>استعن بفني لفحص دائرة التبريد والشحنة عند الحاجة.</li></ul><p>عدم التبريد لا يعني بالضرورة نقص وسيط التبريد؛ فقد يكون السبب من نظام إذابة الثلج أو حساس أو مروحة أو تسرب أو انسداد أو الضاغط.</p>`},
+{id:"coldroom",category:"التبريد التجاري",title:"16. غرف التبريد والتجميد",summary:"الحمل الحراري والأبواب والعزل.",body:`<h3>عناصر الحمل الحراري</h3><ul><li>انتقال الحرارة عبر الجدران والسقف والأرضية.</li><li>فتح الأبواب وتسرب الهواء.</li><li>المنتجات الداخلة وحرارتها وكمية الرطوبة.</li><li>الإضاءة والأشخاص والمراوح.</li><li>دورات إزالة الثلج.</li></ul><h3>المتابعة</h3><p>سجل درجة حرارة الغرفة ودرجة المنتج وحالة الأبواب والإنذارات ودورات إزالة الثلج. يجب أن يطابق اختيار المعدات الحمل المحسوب وظروف التشغيل.</p><h3>صيانة وقائية</h3><p>افحص الجوانات والعزل والمبخر والمكثف والمراوح والتصريف والحساسات وسجل أي تغيّر غير طبيعي.</p>`},
+{id:"troubleshoot",category:"تشخيص الأعطال",title:"17. منهجية تشخيص الأعطال",summary:"من الشكوى إلى السبب المحتمل ثم التحقق.",body:`<h3>القاعدة الذهبية</h3><p>لا تغيّر قطعة لمجرد أن الأعراض تشبه عطلًا معروفًا. اجمع أدلة كافية أولًا.</p><ol><li>اسأل عن العَرَض ووقت بدايته وأي صيانة سابقة.</li><li>سجل نوع الجهاز والموديل ووسيط التبريد.</li><li>تحقق من الإعدادات والتغذية الكهربائية والحمايات وفق إجراءات آمنة.</li><li>افحص تدفق الهواء ونظافة المبادلات وحالة المراوح.</li><li>قِس درجات الحرارة والتيار والضغوط عند الحاجة وبالمعدات المناسبة.</li><li>قارن القياسات ببيانات المصنع.</li><li>اختبر السبب المحتمل بعد التصحيح وسجل النتيجة.</li></ol><table><tr><th>العَرَض</th><th>احتمالات للفحص</th></tr><tr><td>تبريد ضعيف</td><td>فلتر، تدفق هواء، حمل مرتفع، اتساخ مبادل، تحكم، دائرة تبريد.</td></tr><tr><td>ثلج على المبخر</td><td>هواء ضعيف، مروحة، ظروف تشغيل، أداة تمدد أو دائرة تبريد.</td></tr><tr><td>الضاغط لا يعمل</td><td>تغذية، حماية، تحكم، مكثف أو محرك حسب التصميم.</td></tr><tr><td>مياه داخل الغرفة</td><td>انسداد صرف، ميل غير صحيح، عزل أو تكثف غير طبيعي.</td></tr></table><div class="note">الجدول يرشدك إلى الفحص، ولا يثبت أن أحد الاحتمالات هو السبب الفعلي.</div>`},
+{id:"maintenance",category:"الصيانة",title:"18. الصيانة الوقائية",summary:"قائمة مراجعة دورية منظمة.",body:`<h3>قائمة فحص</h3><ul><li>تسجيل رقم الجهاز والموديل وتاريخ الصيانة.</li><li>فحص الفلاتر وتنظيفها وفق تعليمات المصنع.</li><li>فحص نظافة المبخر والمكثف وسلامة الزعانف.</li><li>فحص المراوح والاهتزاز والأصوات.</li><li>فحص التصريف والعزل والجوانات.</li><li>مراجعة التوصيلات والحمايات بواسطة شخص مؤهل.</li><li>تسجيل درجات الحرارة والتيار وأي رموز أعطال.</li><li>تسجيل الأعمال والقطع المستبدلة والتوصيات.</li></ul><h3>نموذج تقرير خدمة</h3><p>اسم الموقع — رقم الجهاز — الموديل — الشكوى — القياسات — الفحوصات — سبب العطل المثبت — الإجراء — نتيجة الاختبار — توصيات المتابعة.</p><div class="note">السجل الجيد يساعد في اكتشاف تكرار الأعطال ويمنع الاعتماد على الذاكرة فقط.</div>`},
+{id:"psychro",category:"الحسابات",title:"19. الحمل الحراري والرطوبة",summary:"الأحمال المحسوسة والكامنة ومفهوم الرطوبة.",body:`<h3>الحمل المحسوس</h3><p>هو الجزء المرتبط بتغيير درجة الحرارة دون احتساب تغير محتوى الرطوبة في الهواء.</p><
