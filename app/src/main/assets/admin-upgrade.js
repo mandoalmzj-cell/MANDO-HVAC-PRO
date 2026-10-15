@@ -339,3 +339,5 @@
     document.addEventListener("DOMContentLoaded", boot);
   else boot();
 })();
+
+// MANDO HVAC PRO - integration update
