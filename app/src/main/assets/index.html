@@ -161,5 +161,6 @@ function renderCustomList(){const el=document.getElementById("customList");el.in
 function deleteCustom(id){if(!confirm("حذف هذا الدرس؟"))return;state.custom=state.custom.filter(l=>l.id!==id);state.done=state.done.filter(x=>x!==id);state.favorites=state.favorites.filter(x=>x!==id);save();renderCustomList();renderLessons()}
 renderStats();renderLessons();renderHome();renderGlossary("");startQuiz();
 </script>
+<script src="admin-upgrade.js"></script>
 </body>
 </html>
